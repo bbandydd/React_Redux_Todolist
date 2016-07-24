@@ -6,6 +6,7 @@ export default class Todo extends Component {
     }
 
     render() {
+
         return (
             <li>
                 <span
@@ -18,9 +19,7 @@ export default class Todo extends Component {
 
                 <button
                     onClick={this.props.onCompletedClick}
-                    style={{
-                        display: this.props.completed ? 'none' : 'default'
-                    }}
+                    className={this.props.completed ? 'hide' : 'show'}
                 >
                     Complete
                 </button>
