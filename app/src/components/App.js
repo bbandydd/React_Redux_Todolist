@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { todoConstant } from '../constants/todoConstant';
 import AddTodo from './AddTodo';
 import TodoList from './TodoList';
 import Filter from './Filter';
-import { addTodo, completeTodo, deleteTodo } from '../actions/todoAction';
-import { setFilter } from '../actions/filterAction';
+import { addTodo, completeTodo, deleteTodo, ADD_TODO, COMPLETE_TODO, DELETE_TODO } from '../actions/todoAction';
+import { setFilter, FILTERS } from '../actions/filterAction';
 
 class App extends Component {
     constructor() {
@@ -44,11 +43,11 @@ class App extends Component {
 
 function filterTodos(todos, filter) {
     switch(filter) {
-        case todoConstant.FILTERS.SHOW_ALL:
+        case FILTERS.SHOW_ALL:
             return todos;
-        case todoConstant.FILTERS.SHOW_COMPLETED:
+        case FILTERS.SHOW_COMPLETED:
             return todos.filter(todo => todo.completed);
-        case todoConstant.FILTERS.SHOW_ACTIVE:
+        case FILTERS.SHOW_ACTIVE:
             return todos.filter(todo => !todo.completed);
     }
 }

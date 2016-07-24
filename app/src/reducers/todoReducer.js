@@ -1,8 +1,8 @@
-import { todoConstant } from '../constants/todoConstant';
+import { ADD_TODO, COMPLETE_TODO, DELETE_TODO } from '../actions/todoAction';
 
 export default function todos(state = [], action) {
     switch(action.type) {
-        case todoConstant.ADD_TODO:
+        case ADD_TODO:
             return [
                 ...state,
                 {
@@ -10,13 +10,13 @@ export default function todos(state = [], action) {
                     completd:false
                 }
             ]
-        case todoConstant.COMPLETE_TODO:
+        case COMPLETE_TODO:
             return [
                 ...state.slice(0, action.index),
                 { ...state[action.index], completed: true },
-                ...state.slice(action.index+1, state.length)
+                ...state.slice(action.index+1)
             ]
-        case todoConstant.DELETE_TODO:
+        case DELETE_TODO:
             return [
                 ...state.slice(0, action.index),
                 ...state.slice(action.index+1, state.length)

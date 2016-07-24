@@ -1,8 +1,8 @@
-import { todoConstant } from '../constants/todoConstant';
+import { SET_FILTER, FILTERS } from '../actions/filterAction';
 
-export default function filters (state = todoConstant.FILTERS.SHOW_ALL, action) {
+export default function filters (state = FILTERS.SHOW_ALL, action) {
     switch(action.type) {
-        case todoConstant.SET_FILTER:
+        case SET_FILTER:
             return action.filter;
         default:
             return state;

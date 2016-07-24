@@ -1,22 +1,24 @@
-import { todoConstant } from '../constants/todoConstant';
+export const ADD_TODO = 'ADD_TODO';
+export const COMPLETE_TODO = 'COMPLETE_TODO';
+export const DELETE_TODO = 'DELETE_TODO';
 
 export function addTodo(text) {
     return {
-        type: todoConstant.ADD_TODO,
+        type: ADD_TODO,
         text
     }
 }
 
 export function completeTodo(index) {
     return {
-        type: todoConstant.COMPLETE_TODO,
+        type: COMPLETE_TODO,
         index
     }
 }
 
 export function deleteTodo(index) {
     return {
-        type: todoConstant.DELETE_TODO,
+        type: DELETE_TODO,
         index
     }
 }

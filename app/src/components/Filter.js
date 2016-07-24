@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { todoConstant } from '../constants/todoConstant';
+import { FILTERS } from '../actions/filterAction';
 
 export default class Filter extends Component {
     constructor() {
@@ -26,11 +26,11 @@ export default class Filter extends Component {
     render() {
         return (
             <p>
-                { this.renderFilter(todoConstant.FILTERS.SHOW_ALL, 'All') }
+                { this.renderFilter(FILTERS.SHOW_ALL, 'All') }
                 { ', ' }
-                { this.renderFilter(todoConstant.FILTERS.SHOW_COMPLETED, 'Completed') }
+                { this.renderFilter(FILTERS.SHOW_COMPLETED, 'Completed') }
                 { ', ' }
-                { this.renderFilter(todoConstant.FILTERS.SHOW_ACTIVE, 'Active') }
+                { this.renderFilter(FILTERS.SHOW_ACTIVE, 'Active') }
             </p>
         )
     }

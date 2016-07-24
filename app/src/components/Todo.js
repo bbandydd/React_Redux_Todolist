@@ -13,7 +13,7 @@ export default class Todo extends Component {
                         textDecoration: this.props.completed ? 'line-through' : 'none'
                     }}
                 >
-                    {this.props.text}
+                    {this.props.text} {this.props.completed}
                 </span>
 
                 <button
