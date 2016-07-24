@@ -1,0 +1,11 @@
+export const todoConstant = {
+    ADD_TODO: 'ADD_TODO',
+    COMPLETE_TODO: 'COMPLETE_TODO',
+    DELETE_TODO: 'DELETE_TODO',
+    SET_FILTER: 'SET_FILTER',
+    FILTERS: {
+        SHOW_ALL: 'SHOW_ALL',
+        SHOW_COMPLETED: 'SHOW_COMPLETED',
+        SHOW_ACTIVE: 'SHOW_ACTIVE'
+    }
+}
