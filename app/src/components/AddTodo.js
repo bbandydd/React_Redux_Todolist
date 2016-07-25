@@ -12,6 +12,9 @@ export default class addTodo extends Component {
                 <button onClick={this.handleClick.bind(this)}>
                     Add
                 </button>
+                <button onClick={this.props.onAddFromServerClick.bind(this)}>
+                    Add From Server
+                </button>
             </div>
         )
     }

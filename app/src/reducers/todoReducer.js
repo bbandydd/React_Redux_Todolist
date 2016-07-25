@@ -1,28 +1,9 @@
-import { INIT_TODO, ADD_TODO, COMPLETE_TODO, DELETE_TODO } from '../constants/todoConstant';
+import { INIT_TODO, ADD_TODO, ADD_TODO_FROM_SERVER, COMPLETE_TODO, DELETE_TODO } from '../constants/todoConstant';
 
 export default function todos(state = [], action) {
     switch(action.type) {
         case INIT_TODO:
-
-            let initState = [
-                {
-                    text: '1111',
-                    completed: false
-                }, {
-                    text: '2222',
-                    completed: true
-                }, {
-                    text: '3333',
-                    completed: false
-                }, {
-                    text: '4444',
-                    completed: false
-                }
-            ]
-
-            return [
-                ...initState
-            ]
+            return action.data;
         case ADD_TODO:
             return [
                 ...state,
@@ -31,6 +12,12 @@ export default function todos(state = [], action) {
                     completd:false
                 }
             ]
+        case ADD_TODO_FROM_SERVER:
+            debugger
+            return [
+                ...state,
+                ...action.data
+            ];
         case COMPLETE_TODO:
             return [
                 ...state.slice(0, action.index),
