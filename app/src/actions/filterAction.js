@@ -1,9 +1,4 @@
-export const SET_FILTER = 'SET_FILTER';
-export const FILTERS = {
-    SHOW_ALL: 'SHOW_ALL',
-    SHOW_COMPLETED: 'SHOW_COMPLETED',
-    SHOW_ACTIVE: 'SHOW_ACTIVE'
-}
+import { SET_FILTER } from '../constants/todoConstant';
 
 export function setFilter(filter) {
     return {

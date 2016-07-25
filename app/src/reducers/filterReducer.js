@@ -1,4 +1,4 @@
-import { SET_FILTER, FILTERS } from '../actions/filterAction';
+import { SET_FILTER, FILTERS } from '../constants/todoConstant';
 
 export default function filters (state = FILTERS.SHOW_ALL, action) {
     switch(action.type) {

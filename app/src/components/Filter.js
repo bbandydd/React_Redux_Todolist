@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FILTERS } from '../actions/filterAction';
+import { FILTERS } from '../constants/todoConstant';
 
 export default class Filter extends Component {
     constructor() {

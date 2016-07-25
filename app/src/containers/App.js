@@ -3,8 +3,9 @@ import { connect } from 'react-redux';
 import AddTodo from '../components/AddTodo';
 import TodoList from '../components/TodoList';
 import Filter from '../components/Filter';
-import { addTodo, completeTodo, deleteTodo, ADD_TODO, COMPLETE_TODO, DELETE_TODO } from '../actions/todoAction';
-import { setFilter, FILTERS } from '../actions/filterAction';
+import { ADD_TODO, COMPLETE_TODO, DELETE_TODO, FILTERS } from '../constants/todoConstant';
+import { addTodo, completeTodo, deleteTodo } from '../actions/todoAction';
+import { setFilter } from '../actions/filterAction';
 
 class App extends Component {
     constructor() {

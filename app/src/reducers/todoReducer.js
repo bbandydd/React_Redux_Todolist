@@ -1,4 +1,4 @@
-import { ADD_TODO, COMPLETE_TODO, DELETE_TODO } from '../actions/todoAction';
+import { ADD_TODO, COMPLETE_TODO, DELETE_TODO } from '../constants/todoConstant';
 
 export default function todos(state = [], action) {
     switch(action.type) {
