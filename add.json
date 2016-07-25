@@ -1,9 +1,9 @@
 [
     {
-        text: 'add1',
-        completed: false
+        "text": "add1",
+        "completed": false
     }, {
-        text: 'add2',
-        completed: false
+        "text": "add2",
+        "completed": false
     }
 ]
