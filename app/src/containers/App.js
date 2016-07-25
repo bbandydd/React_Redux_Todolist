@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import AddTodo from './AddTodo';
-import TodoList from './TodoList';
-import Filter from './Filter';
+import AddTodo from '../components/AddTodo';
+import TodoList from '../components/TodoList';
+import Filter from '../components/Filter';
 import { addTodo, completeTodo, deleteTodo, ADD_TODO, COMPLETE_TODO, DELETE_TODO } from '../actions/todoAction';
 import { setFilter, FILTERS } from '../actions/filterAction';
 
