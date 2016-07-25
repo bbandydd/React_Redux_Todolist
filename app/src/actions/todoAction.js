@@ -1,14 +1,18 @@
 import { INIT_TODO, ADD_TODO, ADD_TODO_FROM_SERVER, COMPLETE_TODO, DELETE_TODO } from '../constants/todoConstant';
 
+let getData = (dispatch, url, action) => {
+    fetch(url)
+    .then((response) => {
+        return response.json();
+    })
+    .then(function(data) {
+        dispatch(action(data));
+    });
+}
+
 export function fetchInitTodo() {
     return (dispatch) => {
-        return fetch('https://bbandydd.github.io/React_Redux_Todolist/initial.json')
-            .then((response) => {
-                return response.json();
-            })
-            .then(function(data) {
-                dispatch(initTodo(data));
-            });
+        return getData(dispatch, 'https://bbandydd.github.io/React_Redux_Todolist/initial.json', initTodo);
     }
 }
 
@@ -21,13 +25,7 @@ let initTodo = (data) => {
 
 export function fetchAddTodoFromServer() {
     return (dispatch) => {
-        return fetch('https://bbandydd.github.io/React_Redux_Todolist/add.json')
-            .then((response) => {
-                return response.json();
-            })
-            .then(function(data) {
-                dispatch(addTodoFromServer(data));
-            })
+        return getData(dispatch, 'https://bbandydd.github.io/React_Redux_Todolist/add.json', addTodoFromServer);
     }
 }
 
