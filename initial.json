@@ -1,0 +1,12 @@
+[
+    {
+        text: 'init1',
+        completed: false
+    },{
+        text: 'init2',
+        completed: true
+    },{
+        text: 'init3',
+        completed: false
+    }
+]
