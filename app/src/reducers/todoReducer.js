@@ -13,7 +13,6 @@ export default function todos(state = [], action) {
                 }
             ]
         case ADD_TODO_FROM_SERVER:
-            debugger
             return [
                 ...state,
                 ...action.data
@@ -27,7 +26,7 @@ export default function todos(state = [], action) {
         case DELETE_TODO:
             return [
                 ...state.slice(0, action.index),
-                ...state.slice(action.index+1, state.length)
+                ...state.slice(action.index+1)
             ]
         default:
             return state;
