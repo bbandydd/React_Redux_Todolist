@@ -1,3 +1,4 @@
+import fetch from 'isomorphic-fetch';
 import { INIT_TODO, ADD_TODO, ADD_TODO_FROM_SERVER, COMPLETE_TODO, DELETE_TODO } from '../constants/todoConstant';
 
 let getData = (dispatch, url, action) => {
