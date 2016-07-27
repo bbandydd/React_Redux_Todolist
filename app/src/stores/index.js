@@ -7,4 +7,4 @@ let Reducers = combineReducers({
     todos, filters
 });
 
-export default applyMiddleware(thunk)(createStore)(Reducers);
+export default applyMiddleware(thunk)(createStore)(Reducers, window.devToolsExtension ? window.devToolsExtension() : undefined);
