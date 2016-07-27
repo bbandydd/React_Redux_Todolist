@@ -3,12 +3,8 @@ import { INIT_TODO, ADD_TODO, ADD_TODO_FROM_SERVER, COMPLETE_TODO, DELETE_TODO }
 
 let getData = (dispatch, url, action) => {
     fetch(url)
-    .then((response) => {
-        return response.json();
-    })
-    .then(function(data) {
-        dispatch(action(data));
-    });
+    .then(response =>  response.json())
+    .then(data => dispatch(action(data)));
 }
 
 export function fetchInitTodo() {
