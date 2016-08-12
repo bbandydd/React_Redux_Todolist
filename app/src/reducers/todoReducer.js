@@ -1,7 +1,9 @@
-import { ADD_TODO, COMPLETE_TODO, DELETE_TODO } from '../constants/todoConstant';
+import { INIT_TODO, ADD_TODO, ADD_TODO_FROM_SERVER, COMPLETE_TODO, DELETE_TODO } from '../constants/todoConstant';
 
 export default function todos(state = [], action) {
     switch(action.type) {
+        case INIT_TODO:
+            return action.data;
         case ADD_TODO:
             return [
                 ...state,
@@ -10,6 +12,11 @@ export default function todos(state = [], action) {
                     completd:false
                 }
             ]
+        case ADD_TODO_FROM_SERVER:
+            return [
+                ...state,
+                ...action.data
+            ];
         case COMPLETE_TODO:
             return [
                 ...state.slice(0, action.index),
@@ -19,7 +26,7 @@ export default function todos(state = [], action) {
         case DELETE_TODO:
             return [
                 ...state.slice(0, action.index),
-                ...state.slice(action.index+1, state.length)
+                ...state.slice(action.index+1)
             ]
         default:
             return state;

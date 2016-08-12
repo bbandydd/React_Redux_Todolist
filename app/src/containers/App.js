@@ -4,12 +4,18 @@ import AddTodo from '../components/AddTodo';
 import TodoList from '../components/TodoList';
 import Filter from '../components/Filter';
 import { ADD_TODO, COMPLETE_TODO, DELETE_TODO, FILTERS } from '../constants/todoConstant';
-import { addTodo, completeTodo, deleteTodo } from '../actions/todoAction';
+import { fetchInitTodo, fetchAddTodoFromServer, initTodo, addTodo, completeTodo, deleteTodo } from '../actions/todoAction';
 import { setFilter } from '../actions/filterAction';
 
 class App extends Component {
     constructor() {
         super();
+    }
+
+    componentDidMount() {
+        //取得初始化資料
+        const { dispatch } = this.props;
+        dispatch(fetchInitTodo());
     }
 
     render() {
@@ -26,6 +32,9 @@ class App extends Component {
                 <AddTodo
                     onAddClick = {
                         text => dispatch(addTodo(text))
+                    }
+                    onAddFromServerClick = {
+                        () => dispatch(fetchAddTodoFromServer())
                     }
                 />
                 <TodoList
