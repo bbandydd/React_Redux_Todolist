@@ -3,7 +3,7 @@ import thunk from 'redux-thunk';
 import todos from '../reducers/todoReducer';
 import filters from '../reducers/filterReducer';
 
-let Reducers = combineReducers({
+const Reducers = combineReducers({
     todos, filters
 });
 

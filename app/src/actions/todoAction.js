@@ -1,7 +1,7 @@
 import fetch from 'isomorphic-fetch';
 import { INIT_TODO, ADD_TODO, ADD_TODO_FROM_SERVER, COMPLETE_TODO, DELETE_TODO } from '../constants/todoConstant';
 
-let getData = (dispatch, url, action) => {
+const getData = (dispatch, url, action) => {
     fetch(url)
     .then(response =>  response.json())
     .then(data => dispatch(action(data)));
@@ -13,7 +13,7 @@ export function fetchInitTodo() {
     }
 }
 
-let initTodo = (data) => {
+const initTodo = (data) => {
     return {
         type: INIT_TODO,
         data
@@ -26,7 +26,7 @@ export function fetchAddTodoFromServer() {
     }
 }
 
-let addTodoFromServer = (data) => {
+const addTodoFromServer = (data) => {
     return {
         type: ADD_TODO_FROM_SERVER,
         data
