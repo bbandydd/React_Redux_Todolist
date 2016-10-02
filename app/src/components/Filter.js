@@ -12,7 +12,10 @@ export default class Filter extends Component {
         }
 
         return (
-            <a href="#" onClick = {
+            <a
+                href="#"
+                className={`filter_${name}`}
+                onClick = {
                 e => {
                     e.preventDefault();
                     this.props.onSetFilter(filter);
@@ -25,7 +28,7 @@ export default class Filter extends Component {
 
     render() {
         return (
-            <p>
+            <p id="filters">
                 { this.renderFilter(FILTERS.SHOW_ALL, 'All') }
                 { ', ' }
                 { this.renderFilter(FILTERS.SHOW_COMPLETED, 'Completed') }

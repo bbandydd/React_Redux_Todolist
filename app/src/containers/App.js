@@ -13,9 +13,9 @@ class App extends Component {
     }
 
     componentDidMount() {
-        //取得初始化資料
-        const { dispatch } = this.props;
-        dispatch(fetchInitTodo());
+        // //取得初始化資料
+        // const { dispatch } = this.props;
+        // dispatch(fetchInitTodo());
     }
 
     render() {
@@ -23,6 +23,7 @@ class App extends Component {
         const { dispatch, todos, filters } = this.props;
         return (
             <div>
+                <h1 id="title">todo MVC</h1>
                 <Filter
                     filter={filters}
                     onSetFilter = {

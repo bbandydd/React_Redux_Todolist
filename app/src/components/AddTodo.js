@@ -8,12 +8,12 @@ export default class addTodo extends Component {
     render() {
         return (
             <div>
-                <input type="text" ref="input" />
-                <button onClick={this.handleClick.bind(this)}>
-                    Add
+                <input id="new_todo" type="text" ref="input" />
+                <button id="btn_add" onClick={this.handleClick.bind(this)}>
+                    add
                 </button>
-                <button onClick={this.props.onAddFromServerClick.bind(this)}>
-                    Add From Server
+                <button id="btn_ajax" onClick={this.props.onAddFromServerClick.bind(this)}>
+                    get server data
                 </button>
             </div>
         )

@@ -8,7 +8,7 @@ export default class Todo extends Component {
     render() {
 
         return (
-            <li>
+            <li className={'todo'}>
                 <span
                     style={{
                         textDecoration: this.props.completed ? 'line-through' : 'none'
@@ -19,13 +19,14 @@ export default class Todo extends Component {
 
                 <button
                     onClick={this.props.onCompletedClick}
-                    className={this.props.completed ? 'hide' : 'show'}
+                    className={this.props.completed ? 'hide' : 'show', 'complete'}
                 >
                     Complete
                 </button>
 
                 <button
                     onClick={this.props.onDeleteClick}
+                    className={'delete'}
                 >
                     Delete
                 </button>
